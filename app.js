@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const ejs = require("ejs");
 const mongo_url = "mongodb://127.0.0.1:27017/wanderlust";
 const Listing = require("./models/listing.js");
+const Review = require("./models/review.js");
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
@@ -124,6 +125,21 @@ app.delete(
     res.redirect("/listings");
   })
 );
+
+//Reviews
+//Post Route
+app.post("/listings/:id/reviews", async (req, res) => {
+  let listing = await Listing.findById(req.params.id);
+  let newReview = new Review(req.body.review);
+
+  listing.reviews.push(newReview);
+  await newReview.save();
+  await listing.save();
+
+  console.log("new review Saved");
+
+  res.redirect(`/listings/${listing._id}`);
+});
 
 // app.all("/{*any}", (req, res, next) => {
 //   next(new ExpressError(404, "Page Not Found"));
