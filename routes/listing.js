@@ -12,14 +12,17 @@ router
   .get(wrapAsync(listingController.index))
 
   //create route
-  .post(
-    isLoggedIn,
-    validateListing,
-    wrapAsync(listingController.createListing)
-  );
+  // .post(
+  //   isLoggedIn,
+  //   validateListing,
+  //   wrapAsync(listingController.createListing)
+  // );
 
-//New route
-router.get("/new", isLoggedIn, listingController.renderNewform);
+  .post((req, res) => {
+    res.send("this", req.body);
+  }),
+  //New route
+  router.get("/new", isLoggedIn, listingController.renderNewform);
 
 router
   .route("/:id")
