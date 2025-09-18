@@ -7,7 +7,10 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const ejs = require("ejs");
-const mongo_url = "mongodb://127.0.0.1:27017/wanderlust";
+// const mongo_url = "mongodb://127.0.0.1:27017/wanderlust";
+const dbUrl = process.env.ATLASDB_URL;
+console.log("ATLASDB_URL from env:", process.env.ATLASDB_URL);
+
 const Listing = require("./models/listing.js");
 const Review = require("./models/review.js");
 const path = require("path");
@@ -17,6 +20,7 @@ const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js");
 const { listingSchema, reviewSchema } = require("./schema.js");
 const session = require("express-session");
+const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
@@ -35,7 +39,7 @@ main()
   });
 
 async function main() {
-  await mongoose.connect(mongo_url);
+  await mongoose.connect(dbUrl);
 }
 
 app.engine("ejs", ejsMate);
@@ -45,8 +49,21 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "/public")));
 
+const store = MongoStore.create({
+  mongoUrl: dbUrl,
+  crypto: {
+    secret: process.env.SECRET,
+    touchAfter: 24 * 3600,
+  },
+});
+
+store.on("error", () => {
+  console.log("Error in Mongo Session Store", err);
+});
+
 const sessionOptions = {
-  secret: "mysupersecretcode",
+  store,
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true,
   cookie: {
@@ -56,9 +73,9 @@ const sessionOptions = {
   },
 };
 
-app.get("/", (req, res) => {
-  res.send("working");
-});
+// app.get("/", (req, res) => {
+//   res.send("working");
+// });
 
 app.use(session(sessionOptions));
 app.use(flash());
