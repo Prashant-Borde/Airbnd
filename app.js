@@ -73,9 +73,9 @@ const sessionOptions = {
   },
 };
 
-// app.get("/", (req, res) => {
-//   res.send("working");
-// });
+app.get("/", (req, res) => {
+  res.redirect("/listinngs");
+});
 
 app.use(session(sessionOptions));
 app.use(flash());
