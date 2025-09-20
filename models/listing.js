@@ -59,7 +59,7 @@ const listingSchema = new Schema({
       "doms",
       "boats",
     ],
-    required: true,
+    required: [true, "Category is required"],
   },
 });
 

@@ -46,6 +46,21 @@ body {
   margin-right: 1rem;
 }
 
+i.fa-brands {
+  font-size: 2rem;
+  margin-right: 10px;
+  color: #333;
+}
+i.fa-square-instagram:hover {
+  color: #fe434d;
+}
+i.fa-square-facebook:hover {
+  color: #1877f2;
+}
+i.fa-square-linkedin:hover {
+  color: #0a66c2;
+}
+
 .f-info {
   text-align: center;
   height: 8rem;
