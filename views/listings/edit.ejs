@@ -78,6 +78,30 @@
       </div>
       <div class="invalid-feedback">Please enter a location name</div>
 
+      <label for="category" class="form-label">Category</label>
+      <select
+        class="form-select mb-3"
+        id="category"
+        name="listing[category]"
+        required
+      >
+        <option value="" disabled selected>
+          <%= listing.category.split('-').map(word =>
+          word.charAt(0).toUpperCase() + word.slice(1)).join(' ') %>
+        </option>
+        <option value="trending">Trending</option>
+        <option value="rooms">Rooms</option>
+        <option value="iconic-cities">Iconic Cities</option>
+        <option value="mountain">Mountain</option>
+        <option value="castle">Castle</option>
+        <option value="amazing-pools">Amazing Pools</option>
+        <option value="camping">Camping</option>
+        <option value="farms">Farms</option>
+        <option value="arctic">Arctic</option>
+        <option value="doms">Doms</option>
+        <option value="boats">Boats</option>
+      </select>
+
       <button class="btn btn-dark edit-btn mt-3">Edit</button>
     </form>
   </div>
