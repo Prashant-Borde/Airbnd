@@ -1,7 +1,4 @@
-# Airbnd
-
-````markdown
-# 🏡 Airbnb Clone (Full-Stack Project)
+🏡 Airbnb (Full-Stack Project)
 
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
@@ -11,22 +8,22 @@
 
 ---
 
-## 📑 Table of Contents
+📑 Table of Contents
 
-- [Project Overview](#-project-overview)
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Installation & Setup](#-installation--setup)
-- [Screenshots](#-screenshots)
-- [Learning Highlights](#-learning-highlights)
-- [Future Enhancements](#-future-enhancements)
-- [Contributing](#-contributing)
-- [License](#-license)
+- [Project Overview](-project-overview)
+- [Features](-features)
+- [Tech Stack](-tech-stack)
+- [Project Structure](-project-structure)
+- [Installation & Setup](-installation--setup)
+- [Screenshots](-screenshots)
+- [Learning Highlights](-learning-highlights)
+- [Future Enhancements](-future-enhancements)
+- [Contributing](-contributing)
+- [License](-license)
 
 ---
 
-## 📌 Project Overview
+📌 Project Overview
 
 This is a **full-stack Airbnb Clone** built using **Node.js, Express, MongoDB, and EJS**.  
 It allows users to **list properties, book stays, write reviews, authenticate securely, upload images, and view locations on a map**.
@@ -35,7 +32,7 @@ The project was built step-by-step in phases, covering everything from **basic C
 
 ---
 
-## 🚀 Features
+🚀 Features
 
 - ✅ User authentication (SignUp / Login / Logout) with **Passport.js**
 - ✅ Secure password storage with **Hashing & Salting**
@@ -51,7 +48,7 @@ The project was built step-by-step in phases, covering everything from **basic C
 
 ---
 
-## 🛠️ Tech Stack
+🛠️ Tech Stack
 
 - **Frontend**: HTML, CSS, JavaScript, EJS
 - **Backend**: Node.js, Express.js
@@ -63,40 +60,41 @@ The project was built step-by-step in phases, covering everything from **basic C
 
 ---
 
-## 📂 Project Structure
+📂 Project Structure
 
 ```bash
 Airbnb-Clone/
-│── models/          # Mongoose Schemas (User, Listing, Review)
-│── routes/          # Express Routes (Listings, Reviews, Users)
-│── controllers/     # MVC Controllers
-│── middleware/      # Custom Middlewares
-│── public/          # Static assets (CSS, JS, Images)
-│── views/           # EJS Templates
-│── app.js           # Main server file
+│── models/           Mongoose Schemas (User, Listing, Review)
+│── routes/           Express Routes (Listings, Reviews, Users)
+│── controllers/      MVC Controllers
+│── middleware/       Custom Middlewares
+│── public/           Static assets (CSS, JS, Images)
+│── views/            EJS Templates
+│── app.js            Main server file
 │── package.json
 │── README.md
 ```
+
 ````
 
 ---
 
-## ⚡ Installation & Setup
+⚡ Installation & Setup
 
-### 1️⃣ Clone the repo
+1️⃣ Clone the repo
 
 ```bash
 git clone https://github.com/yourusername/airbnb-clone.git
 cd airbnb-clone
 ```
 
-### 2️⃣ Install dependencies
+2️⃣ Install dependencies
 
 ```bash
 npm install
 ```
 
-### 3️⃣ Set environment variables
+3️⃣ Set environment variables
 
 Create a `.env` file in the root:
 
@@ -109,19 +107,19 @@ MAPBOX_TOKEN=your_mapbox_token
 SESSION_SECRET=your_secret
 ```
 
-### 4️⃣ Run the app
+4️⃣ Run the app
 
 ```bash
 npm start
 ```
 
-### 5️⃣ Open in browser
+5️⃣ Open in browser
 
 Visit: `http://localhost:3000`
 
 ---
 
-## 📸 Screenshots
+📸 Screenshots
 
 | Homepage                 | Listing Page             | Add New Listing        |
 | ------------------------ | ------------------------ | ---------------------- |
@@ -129,7 +127,7 @@ Visit: `http://localhost:3000`
 
 ---
 
-## 🧑‍💻 Learning Highlights
+🧑‍💻 Learning Highlights
 
 - CRUD operations with Express & MongoDB
 - Middleware, Error handling, and Validation
@@ -140,7 +138,7 @@ Visit: `http://localhost:3000`
 
 ---
 
-## 🔮 Future Enhancements
+🔮 Future Enhancements
 
 - 💳 Add booking & payment system
 - ⭐ Wishlist / Favorites feature
@@ -150,17 +148,12 @@ Visit: `http://localhost:3000`
 
 ---
 
-## 🤝 Contributing
+🤝 Contributing
 
 Pull requests are welcome!
 For major changes, please open an issue first to discuss what you would like to change.
 
 ---
 
-## 📜 License
-
-This project is **open-source** and available under the [MIT License](LICENSE).
-
-```
-
-```
+📜 License
+````
