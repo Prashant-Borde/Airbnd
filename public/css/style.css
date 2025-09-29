@@ -136,4 +136,7 @@ i.fa-square-linkedin:hover {
 #map {
   height: 400px;
   width: 80vh;
+  border-radius: 1rem !important;
+  width: 100% !important;
+  object-fit: cover !important;
 }
