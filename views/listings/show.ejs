@@ -24,11 +24,11 @@
         &#8377; <%= listing.price.toLocaleString("en-IN") %>
       </p>
       <p class="card-text">
-        Category : <%= listing.category.split('-').map(word =>
+        <b>Category</b> : <%= listing.category.split('-').map(word =>
         word.charAt(0).toUpperCase() + word.slice(1)).join(' ') %>
       </p>
-      <p class="card-text"><%= listing.location %></p>
-      <p class="card-text"><%= listing.country %></p>
+      <p class="card-text"><b>Location</b> : <%= listing.location %></p>
+      <p class="card-text"><b>Country</b> : <%= listing.country %></p>
     </div>
   </div>
 
