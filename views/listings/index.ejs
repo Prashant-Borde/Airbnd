@@ -1,13 +1,30 @@
 <% layout("/layouts/boilerplate") %> <%= success %>
 
 <style>
+  #filters-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden; /* keep bar clean */
+    padding: 0.5rem 1rem;
+  }
+
   #filters {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow-x: auto; /* enable horizontal scroll */
+    -webkit-overflow-scrolling: touch; /* smooth scroll on mobile */
+    scrollbar-width: none;
     align-items: center;
+    max-width: calc(100% - 220px);
+  }
+
+  #filters::-webkit-scrollbar {
+    display: none; /* hide scrollbar in Chrome/Safari */
   }
 
   .filter {
+    flex: 0 0 auto; /* prevent shrinking */
     text-align: center;
     margin-right: 2rem;
     margin-top: 2rem;
@@ -38,55 +55,57 @@
     margin-left: 2rem;
     display: flex;
     align-items: center;
+    flex-shrink: 0;
   }
 </style>
 
-<div id="filters">
-  <div class="filter" data-category="trending">
-    <div><i class="fa-solid fa-fire"></i></div>
-    <p>Trending</p>
+<div id="filters-bar">
+  <div id="filters">
+    <div class="filter" data-category="trending">
+      <div><i class="fa-solid fa-fire"></i></div>
+      <p>Trending</p>
+    </div>
+    <div class="filter" data-category="rooms">
+      <div><i class="fa-solid fa-bed"></i></div>
+      <p>Rooms</p>
+    </div>
+    <div class="filter" data-category="iconic-cities">
+      <div><i class="fa-solid fa-mountain-city"></i></div>
+      <p>Iconic Cities</p>
+    </div>
+    <div class="filter" data-category="mountain">
+      <div><i class="fa-solid fa-mountain"></i></div>
+      <p>Mountain</p>
+    </div>
+    <div class="filter" data-category="castle">
+      <div><i class="fa-brands fa-fort-awesome"></i></div>
+      <p>Castle</p>
+    </div>
+    <div class="filter" data-category="amazing-pools">
+      <div><i class="fa-solid fa-person-swimming"></i></div>
+      <p>Amazing Pools</p>
+    </div>
+    <div class="filter" data-category="camping">
+      <div><i class="fa-solid fa-campground"></i></div>
+      <p>Camping</p>
+    </div>
+    <div class="filter" data-category="farms">
+      <div><i class="fa-solid fa-cow"></i></div>
+      <p>Farms</p>
+    </div>
+    <div class="filter" data-category="arctic">
+      <div><i class="fa-regular fa-snowflake"></i></div>
+      <p>Arctic</p>
+    </div>
+    <div class="filter" data-category="doms">
+      <div><i class="fa-solid fa-igloo"></i></div>
+      <p>Doms</p>
+    </div>
+    <div class="filter" data-category="boats">
+      <div><i class="fa-solid fa-ship"></i></div>
+      <p>Boats</p>
+    </div>
   </div>
-  <div class="filter" data-category="rooms">
-    <div><i class="fa-solid fa-bed"></i></div>
-    <p>Rooms</p>
-  </div>
-  <div class="filter" data-category="iconic-cities">
-    <div><i class="fa-solid fa-mountain-city"></i></div>
-    <p>Iconic Cities</p>
-  </div>
-  <div class="filter" data-category="mountain">
-    <div><i class="fa-solid fa-mountain"></i></div>
-    <p>Mountain</p>
-  </div>
-  <div class="filter" data-category="castle">
-    <div><i class="fa-brands fa-fort-awesome"></i></div>
-    <p>Castle</p>
-  </div>
-  <div class="filter" data-category="amazing-pools">
-    <div><i class="fa-solid fa-person-swimming"></i></div>
-    <p>Amazing Pools</p>
-  </div>
-  <div class="filter" data-category="camping">
-    <div><i class="fa-solid fa-campground"></i></div>
-    <p>Camping</p>
-  </div>
-  <div class="filter" data-category="farms">
-    <div><i class="fa-solid fa-cow"></i></div>
-    <p>Farms</p>
-  </div>
-  <div class="filter" data-category="arctic">
-    <div><i class="fa-regular fa-snowflake"></i></div>
-    <p>Arctic</p>
-  </div>
-  <div class="filter" data-category="doms">
-    <div><i class="fa-solid fa-igloo"></i></div>
-    <p>Doms</p>
-  </div>
-  <div class="filter" data-category="boats">
-    <div><i class="fa-solid fa-ship"></i></div>
-    <p>Boats</p>
-  </div>
-
   <div class="tax-toggle">
     <div class="form-check-reverse form-switch">
       <input

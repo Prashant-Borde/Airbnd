@@ -9,7 +9,6 @@ const mongoose = require("mongoose");
 const ejs = require("ejs");
 // const mongo_url = "mongodb://127.0.0.1:27017/wanderlust";
 const dbUrl = process.env.ATLASDB_URL;
-console.log("ATLASDB_URL from env:", process.env.ATLASDB_URL);
 
 const Listing = require("./models/listing.js");
 const Review = require("./models/review.js");
